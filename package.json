@@ -1,0 +1,30 @@
+{
+  "name": "messaging_api",
+  "version": "0.0.1",
+  "description": "it is a messaging app api.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjaljn97/CashPositive-InternTask.git"
+  },
+  "keywords": [
+    "API",
+    "messaging"
+  ],
+  "author": "Pranjal jain (pranjal.jn97@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranjaljn97/CashPositive-InternTask/issues"
+  },
+  "homepage": "https://github.com/pranjaljn97/CashPositive-InternTask#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11",
+    "nodemon": "^1.17.2"
+  }
+}
