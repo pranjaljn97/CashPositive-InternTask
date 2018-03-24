@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/codealong');
 
+var User = require('./app/models/users');
+//var Message = require('./app/models/messages');
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -26,7 +29,48 @@ res.sendFile(__dirname + "/app/index.html");
 //res.json({message: 'Welcome to our API!'});
 });
 
+router.route('/register')
+  .post(function(req, res) {
+    var user = new User(); 
+    user.firstName = req.body.fname;
+    user.lastName = req.body.lname;
+    user.userName = req.body.uname;
+    user.password = req.body.pwd;
 
+    user.save(function(err) {
+      if (err) {
+        res.send(err);
+      }
+      res.json({message: 'User is successfully registered!'});
+    });
+  });
+
+  router.route('/login')
+  .post(function(req, res) {
+    
+   
+   var user_name = req.body.uname;
+   var pass = req.body.pwd;
+
+    User.findOne({$and: [{userName: user_name },{ password: pass}] }).exec(function(err,user) {
+      if (err) {
+        res.send(err);
+      }
+      else if(user){
+      res.json({message: 'LoggedIn successfully !'});
+      }
+      else
+      {
+      	res.json({message: 'Invalid Credentials/No User !'});
+      }
+    });
+  });
+
+ //router.get("/inbox", (req, res) => {
+
+  
+//res.json({message: 'Welcome to our API!'});
+//});
 
 
 app.listen(port, () => {
