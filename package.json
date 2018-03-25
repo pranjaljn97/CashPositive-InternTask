@@ -4,7 +4,8 @@
   "description": "it is a messaging app api.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,10 @@
   "homepage": "https://github.com/pranjaljn97/CashPositive-InternTask#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "eslint": "^4.19.1",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "mongoose": "^5.0.11",
     "nodemon": "^1.17.2"
   }

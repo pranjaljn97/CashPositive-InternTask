@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+var MessageSchema = new Schema({
   subject : String,
   content : String,
   touser: String,
