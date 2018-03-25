@@ -11,7 +11,7 @@ app.use(session({secret: 'cash_positive',
 
 // Connect to DB
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/codealong');
+mongoose.connect('mongodb://pranjal:pranjal123@ds223609.mlab.com:23609/mongo');
 
 var User = require('./app/models/users');
 var Message = require('./app/models/messages');
